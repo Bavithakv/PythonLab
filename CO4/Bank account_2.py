@@ -1,20 +1,27 @@
 class Bank:
- accountNo = ""
- name = ""
- typeOfAccount = ""
- balance = 0
- def __init__(self,accountNo,name,typeOfAccount,balance):
-  self.accountNo = accountNo
-  self.name = name
-  self.typeOfAccount = typeOfAccount
-  self.balance = balance
- def deposit(self,amount):
-  self.balance = self.balance + amount
- def withdraw(self,amount):
-  self.balance = self.balance - amount
-acc1 = Bank("ACC31323","Laika","Savings",10000)
-acc2 = Bank("ACC09932","Megan","Current",8400)
-acc1.withdraw(4531)
-acc2.deposit(5600)
-print(acc1.balance)
-print(acc2.balance)
+    def __init__(self, acno, name, type, bal):
+        self.acno = acno
+        self.name = name
+        self.type = type
+        self.bal = bal
+
+    def deposite(self, amount):
+        self.bal = self.bal + amount
+        print("amount deposited successfully")
+        return self.bal
+
+    def withdraw(self, amount):
+        if amount > self.bal:
+            print("insufficient balance")
+            return self.bal
+        else:
+            self.bal = self.bal - amount
+            print("amount withdrawed successfully")
+            return self.bal
+
+
+b = Bank(1001, "jazz", "savings", 2500)
+damount = float(input("Enter the amount to be deposited:"))
+print("Account balance:", b.deposite(damount))
+wamount = float(input("Enter the amount to be withdrawn:"))
+print("Account balance:", b.withdraw(wamount))
