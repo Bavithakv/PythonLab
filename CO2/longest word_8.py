@@ -1,4 +1,4 @@
-a=input("enter the list")
+a=input("enter the words")
 li=a.split(" ")
 m=len(li[0])
 for i in li:

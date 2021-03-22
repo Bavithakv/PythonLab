@@ -1,4 +1,4 @@
-list = [10,13,25,30,33,15]
+list = [10,13,25,12,30,33,15]
 print(list)
 for i in list:
   if(i%2==0):
