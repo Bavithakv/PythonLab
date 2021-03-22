@@ -20,7 +20,7 @@ class Bank:
             return self.bal
 
 
-b = Bank(1001, "Rinu", "savings", 2500)
+b = Bank(1001, "jazz", "savings", 2500)
 damount = float(input("Enter the amount to be deposited:"))
 print("Account balance:", b.deposite(damount))
 wamount = float(input("Enter the amount to be withdrawn:"))
