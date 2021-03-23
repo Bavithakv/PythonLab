@@ -1,26 +1,26 @@
-class Rectangle:
-    def __init__(self,length,width):
-        self.__length=length
-        self.__width=width
+class Bank:
+    def __init__(self,member,accno,type,balance):
+        self.member=member
+        self.type=type
+        self.accno=accno
+        self.balance=balance
+    def deposit(self):
+        damount=int(input("Enter the amount to be deposit : "))
+        self.balance=self.balance+damount
+        print("Amount is successfully deposited.")
+        print("Your available balance is :",self.balance)
+    def withdraw(self):
+        wamount=int(input("Enter the amount to be withdraw : "))
+        if(self.balance<wamount):
+            print("Insufficient balance")
+        else:
+            self.balance=self.balance-wamount
+            print("Amount is successfully withdrawn.")
+            print("Your available balance is :",self.balance)
 
-    def area(self):
-        return (self.__length * self.__width)
-
-    def __lt__(self, other):
-        return self.area() < other.area()
-
-lenth1 = int(input("Enter the length of first rectangle : "))
-width1 = int(input("Enter the width of first rectangle : "))
-rectangle1=Rectangle(length1,width1)
-
-length2 = int(input("Enter the length of second rectangle : "))
-width2 = int(input("Enter the width of second rectangle : "))
-rectangle2=Rectangle(length2,width2)
-
-# r1=Rectangle(4,5)
-# r2=Rectangle9(6,3)
-
-if rectangle1 < rectangle2:
-    print("Area of rectangle 1 is small")
-else:
-    print("Area of rectangle 2 is small")
+c1=Bank("Aparna",2020,"current",7500)
+c2=Bank("Anjana",2021,"savings",5000)
+dep1=c1.deposit()
+# dep2=c2.deposit()
+with1=c1.withdraw()
+# with2=c2.withdraw()
