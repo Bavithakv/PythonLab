@@ -1,27 +1,26 @@
 class Bank:
-    def __init__(self, acno, name, type, bal):
-        self.acno = acno
-        self.name = name
-        self.type = type
-        self.bal = bal
-
-    def deposite(self, amount):
-        self.bal = self.bal + amount
-        print("amount deposited successfully")
-        return self.bal
-
-    def withdraw(self, amount):
-        if amount > self.bal:
-            print("insufficient balance")
-            return self.bal
+    def __init__(self,member,accno,type,balance):
+        self.member=member
+        self.type=type
+        self.accno=accno
+        self.balance=balance
+    def deposit(self):
+        damount=int(input("Enter the amount to be deposit : "))
+        self.balance=self.balance+damount
+        print("Amount is successfully deposited.")
+        print("Your available balance is :",self.balance)
+    def withdraw(self):
+        wamount=int(input("Enter the amount to be withdraw : "))
+        if(self.balance<wamount):
+            print("Insufficient balance")
         else:
-            self.bal = self.bal - amount
-            print("amount withdrawed successfully")
-            return self.bal
+            self.balance=self.balance-wamount
+            print("Amount is successfully withdrawn.")
+            print("Your available balance is :",self.balance)
 
-
-b = Bank(1001, "jazz", "savings", 2500)
-damount = float(input("Enter the amount to be deposited:"))
-print("Account balance:", b.deposite(damount))
-wamount = float(input("Enter the amount to be withdrawn:"))
-print("Account balance:", b.withdraw(wamount))
+c1=Bank("Aparna",2020,"current",7500)
+c2=Bank("Anjana",2021,"savings",5000)
+dep1=c1.deposit()
+# dep2=c2.deposit()
+with1=c1.withdraw()
+# with2=c2.withdraw()
